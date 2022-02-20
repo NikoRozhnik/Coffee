@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1039</width>
     <height>600</height>
    </rect>
   </property>
@@ -17,11 +17,50 @@
    <widget class="QTableWidget" name="tbl">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>220</x>
       <y>20</y>
-      <width>711</width>
+      <width>751</width>
       <height>501</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="b_add">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добавить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="b_edit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>176</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Изменить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="b_delete">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>260</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
     </property>
    </widget>
   </widget>
@@ -30,8 +69,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>26</height>
+     <width>1039</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>
