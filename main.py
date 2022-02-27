@@ -1,10 +1,10 @@
 import sqlite3
 import sys
 
-from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow, QMessageBox, QTableWidgetItem
 
+from addEditCoffeeForm_ui import Ui_Dialog
+from main_ui import Ui_MainWindow
 
 GET_QUERY = """SELECT *
     FROM CoffeeKinds
@@ -23,10 +23,10 @@ DEL_QUERY = """DELETE
     WHERE CoffeeKinds.id = ?"""
 
 
-class CoffeeAddEdit(QDialog):
+class CoffeeAddEdit(QDialog, Ui_Dialog):
     def __init__(self, data=None):
         super().__init__()
-        uic.loadUi("addEditCoffeeForm.ui", self)
+        self.setupUi(self)
         if data:
             self.le_name.setText(data[0])
             self.le_burnlvl.setText(str(data[1]))
@@ -47,11 +47,11 @@ class CoffeeAddEdit(QDialog):
         return data
 
 
-class Coffee(QMainWindow):
+class Coffee(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("main.ui", self)
-        self.connection = sqlite3.connect("coffee.sqlite")
+        self.setupUi(self)
+        self.connection = sqlite3.connect("data/coffee.sqlite")
         self.cursor = self.connection.cursor()
         res = self.cursor.execute(GET_QUERY).fetchall()
         self.field_names = [f[0] for f in self.cursor.description]
